@@ -48,11 +48,11 @@ export default function Card({ title, image, description, id, blueprints }) {
       </Figure>
       <p>Description: {description}</p>
       <p>Blueprints: {blueprints}</p>
-      <Link href={`projects/${id}`} passHref legacyBehavior>
+      {/* <Link href={`projects/${id}`} passHref legacyBehavior>
         <Anchor>
           <span>More Info</span>
         </Anchor>
-      </Link>
+      </Link> */}
     </Article>
   );
 }

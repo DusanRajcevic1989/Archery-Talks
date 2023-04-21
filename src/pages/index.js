@@ -1,35 +1,34 @@
-import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
-import Navigation from "../../components/Navigation";
+import styled from "styled-components";
 import useSWR from "swr";
-import ProjectForm from "../../components/ProjectForm";
-import Card from "../../components/Card";
 import List from "../../components/List";
+import Link from "next/link";
+
+const HomeStyle = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+const StyledButton = styled.button`
+  position: fixed;
+  bottom: 50px;
+  left: 50px;
+  background-color: lightsalmon;
+  padding: 0.8rem;
+  border-radius: 12px;
+  color: black;
+  font-weight: bold;
+  font-size: inherit;
+`;
 
 export default function Home() {
-  // const { data } = useSWR("api/projects", fetcher);
-  // console.log("give me something", data);
+  const { data } = useSWR("/api/projects");
+  console.log("give me something", data);
   return (
-    <>
-      <main className={styles.main}>
-        <Navigation />
-        <List />
-        {/* <ul>
-          {data.map((project) => {
-            return (
-              <li key={project._id}>
-                <Card
-                  title={project.title}
-                  image={project.image}
-                  description={project.descrion}
-                  blueprint={project.blueprint}
-                  id={project._id}
-                />
-              </li>
-            );
-          })}
-        </ul> */}
-      </main>
-    </>
+    <HomeStyle>
+      <List />
+      <Link href="/create" passHref legacyBehavior>
+        <StyledButton>Add Your Project</StyledButton>
+      </Link>
+    </HomeStyle>
   );
 }

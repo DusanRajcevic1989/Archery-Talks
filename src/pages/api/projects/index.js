@@ -10,5 +10,17 @@ export default async function handler(request, response) {
       response.status(200).json(projects);
 
       break;
+    case "POST":
+      try {
+        const projectData = request.body;
+        const project = new Project(projectData);
+        await project.save();
+
+        response.status(200).json({ status: "Project created." });
+      } catch (error) {
+        console.error(error);
+        return response.status(400).json({ error: error.message });
+      }
+      break;
   }
 }

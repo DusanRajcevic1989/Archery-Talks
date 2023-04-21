@@ -1,5 +1,12 @@
 import Head from "next/head";
 import styled from "styled-components";
+import Navigation from "./Navigation";
+
+const StyledLayout = styled.div`
+  display: flex;
+  flex-direction: row;
+  background-color: brown;
+`;
 
 const Main = styled.main`
   display: flex;
@@ -9,16 +16,16 @@ const Main = styled.main`
   padding: 0.5rem;
   position: relative;
   width: 100%;
-  background-color: aliceblue;
 `;
 
 export default function Layout({ children }) {
   return (
-    <>
+    <StyledLayout>
       <Head>
         <title>Archery Talks</title>
       </Head>
+      <Navigation />
       <Main>{children}</Main>
-    </>
+    </StyledLayout>
   );
 }

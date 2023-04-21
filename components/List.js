@@ -4,10 +4,18 @@ import useSWR from "swr";
 import styled from "styled-components";
 
 const Lists = styled.ul`
-  display: grid;
-  width: 100px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  width: auto;
   height: auto;
   border-radius: 15px;
+  background-color: #fff9de;
+  gap: 10px;
+`;
+
+const ListItem = styled.li`
+  padding: 8px;
 `;
 
 export default function List() {
@@ -21,15 +29,15 @@ export default function List() {
       <Lists>
         {data?.map((project) => {
           return (
-            <li key={project._id}>
+            <ListItem key={project._id}>
               <Card
                 title={project.title}
                 image={project.image}
-                description={project.descrion}
+                description={project.description}
                 blueprint={project.blueprint}
                 id={project._id}
               />
-            </li>
+            </ListItem>
           );
         })}
       </Lists>

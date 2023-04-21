@@ -1,10 +1,12 @@
 import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
+import { StyledButton } from "./StyledButton";
 
 const StyledNav = styled.div`
   display: flex;
   flex-wrap: wrap;
+  border-radius: 12px;
   width: 100%;
   height: 50px;
   padding: 20;
@@ -18,9 +20,13 @@ const StyledNav = styled.div`
 export default function Navigation() {
   return (
     <StyledNav>
-      <Link href="">Filter</Link>
+      <Link href="">
+        <StyledButton type="dropbutton">Filter</StyledButton>
+      </Link>
       <Link href="">About</Link>
-      <Link href="">Log In</Link>
+      <Link href="">
+        <StyledButton type="button">Log In</StyledButton>
+      </Link>
     </StyledNav>
   );
 }

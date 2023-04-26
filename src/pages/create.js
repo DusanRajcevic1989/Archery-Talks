@@ -14,6 +14,8 @@ const Headline = styled.h2`
   justify-content: center;
   width: 100%;
   height: 50px;
+  margin: 5px;
+
   border-radius: 12px;
   background-color: #fff9de;
 `;
@@ -55,7 +57,7 @@ export default function CreateProjectPage() {
 
       <ProjectForm onSubmit={addProject} formName={"add-roject"} />
       <Link href="/" passHref legacyBehavior>
-        <BackButton>back</BackButton>
+        <BackButton>Go Back</BackButton>
       </Link>
     </Create>
   );

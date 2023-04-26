@@ -4,13 +4,12 @@ import Navigation from "./Navigation";
 
 const StyledLayout = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   background-color: brown;
 `;
 
 const Main = styled.main`
-  display: flex;
-  flex-direction: row;
+  display: grid;
   gap: 0.5rem;
   margin-top: 1rem;
   padding: 0.5rem;
@@ -18,7 +17,7 @@ const Main = styled.main`
   width: 100%;
 `;
 
-export default function Layout({ children }) {
+export default function Layout({ children, search, setSearch }) {
   return (
     <StyledLayout>
       <Head>

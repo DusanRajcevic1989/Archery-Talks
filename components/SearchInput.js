@@ -18,7 +18,7 @@ export default function SearchInput() {
       <input
         value={search}
         onChange={(event) => setSearch(event.target.value)}
-        placeholder="'What are you looking for?"
+        placeholder="Search here"
       />
     </form>
   );

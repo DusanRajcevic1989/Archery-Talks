@@ -2,7 +2,6 @@ import styled from "styled-components";
 import useSWR from "swr";
 import List from "../../components/List";
 import Link from "next/link";
-import Navigation from "../../components/Navigation";
 
 const HomeStyle = styled.div`
   display: flex;
@@ -42,7 +41,6 @@ export default function Home() {
   console.log("give me something", data);
   return (
     <>
-      <Navigation />
       <HomeStyle>
         <List />
         <Buttons>

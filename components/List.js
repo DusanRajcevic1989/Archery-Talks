@@ -2,6 +2,7 @@ import React from "react";
 import Card from "./Card";
 import useSWR from "swr";
 import styled from "styled-components";
+import Comments from "./Comments";
 
 const Lists = styled.ul`
   list-style-type: none;
@@ -56,6 +57,9 @@ export default function List() {
               <StyledButton onClick={() => onToggleFavorite(isFavorite)}>
                 Favorite
               </StyledButton>
+              {/* <div>
+                <Comments />
+              </div> */}
             </ListItem>
           );
         })}

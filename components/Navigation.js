@@ -11,7 +11,7 @@ const StyledNav = styled.div`
 
   width: auto;
   height: 50px;
-  /* margin: 8px; */
+  margin: 8px;
   justify-content: space-around;
   align-items: center;
   background-color: #fff9de;

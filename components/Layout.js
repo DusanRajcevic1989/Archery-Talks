@@ -1,5 +1,6 @@
 import Head from "next/head";
 import styled from "styled-components";
+import Navigation from "./Navigation";
 
 const StyledLayout = styled.div`
   display: flex;
@@ -22,6 +23,7 @@ export default function Layout({ children, search, setSearch }) {
       <Head>
         <title>Archery Talks</title>
       </Head>
+      <Navigation />
       <Main>{children}</Main>
     </StyledLayout>
   );

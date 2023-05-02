@@ -2,6 +2,7 @@ import styled from "styled-components";
 import useSWR from "swr";
 import List from "../../components/List";
 import Link from "next/link";
+import Navigation from "../../components/Navigation";
 
 const HomeStyle = styled.div`
   display: flex;
@@ -37,11 +38,12 @@ const StyledChat = styled.button`
 `;
 
 export default function Home() {
-  const { data } = useSWR("/api/projects");
-  console.log("give me something", data);
+  // const { data } = useSWR("/api/projects");
+
   return (
     <>
       <HomeStyle>
+        <Navigation />
         <List />
         <Buttons>
           <Link href="/create">

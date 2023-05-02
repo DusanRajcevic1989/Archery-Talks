@@ -23,7 +23,7 @@ export default function Layout({ children, search, setSearch }) {
       <Head>
         <title>Archery Talks</title>
       </Head>
-      <Navigation />
+
       <Main>{children}</Main>
     </StyledLayout>
   );

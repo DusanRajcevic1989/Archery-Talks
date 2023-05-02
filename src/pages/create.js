@@ -55,7 +55,7 @@ export default function CreateProjectPage() {
     <Create>
       <Headline id="add-project">Add Project</Headline>
 
-      <ProjectForm onSubmit={addProject} formName={"add-roject"} />
+      <ProjectForm onSubmit={addProject} formName={"add-project"} />
       <Link href="/" passHref legacyBehavior>
         <BackButton>Go Back</BackButton>
       </Link>

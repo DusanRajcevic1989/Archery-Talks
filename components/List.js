@@ -57,9 +57,8 @@ export default function List() {
               <StyledButton onClick={() => onToggleFavorite(isFavorite)}>
                 Favorite
               </StyledButton>
-              {/* <div>
-                <Comments />
-              </div> */}
+
+              <Comments projectId={project._id} />
             </ListItem>
           );
         })}

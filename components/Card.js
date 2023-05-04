@@ -20,7 +20,6 @@ const ImageContainer = styled.div`
 
 const Figure = styled.figure`
   position: relative;
-  margin: 0;
 `;
 
 const Anchor = styled.a`

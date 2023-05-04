@@ -2,9 +2,11 @@ import Link from "next/link";
 import styled from "styled-components";
 
 const StyledParagraph = styled.div`
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: antiquewhite;
   margin-bottom: 5px;
+  color: black;
 `;
 const BackButton = styled.button`
   background-color: lightsalmon;
@@ -28,16 +30,19 @@ export default function About() {
           piece of a strait wood, and you got your selfe something that can
           treathen a neighbours cat.
           <br />
+          <br />
           So I started. With thicker willow stick for the bow, and tinner one
           for the arrows. It flew, but woble was real big. Then you change wood
           for the arrows, but anyhow it is hte bush wood, still. Next step for
           me was to add a bit of wire in the front of the arrows. It flew
           straiter and longer. I was thrilled!!
           <br />
+          <br />
           Next thing I knew, I was devoting all of my time searching on the
           internet how to make my arrows fly strait. Naturally, articles and
           wideos about bows started to pop up. and the more I read about it, the
           more i knew it is something that will stick with me for a long time.
+          <br />
           <br />
           Since, I have made 4 bows, 2 hickory and 2 ash bows. I have made few
           dozens of arrows (pine, poplar, spruce, ash). Of course, I added
@@ -54,13 +59,16 @@ export default function About() {
           this toppic is well worth of time and stress, cuz it is important to
           prevent this craft from going extinct.
           <br />
+          <br />
           I know for a fact, that people who find themselves working on things
           like this, are good natured people with good heart, and desire to help
           and share.
           <br />
+          <br />
           So, lets get going to create fine bows, fine arrows, and even finner
           relations with one another. Share, comment, add and chat about your
           successes, fails, frustrations and ideas.
+          <br />
         </p>
       </StyledParagraph>
       <Link href="/">

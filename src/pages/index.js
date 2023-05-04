@@ -3,7 +3,8 @@ import useSWR from "swr";
 import List from "../../components/List";
 import Link from "next/link";
 import Navigation from "../../components/Navigation";
-// import { useSession } from "next-auth/react";
+import Image from "next/image";
+
 const HomeStyle = styled.div`
   display: flex;
   flex-direction: column;
@@ -42,6 +43,7 @@ export default function Home() {
     <>
       <HomeStyle>
         <Navigation />
+
         <List />
         <Buttons>
           <Link href="/create">

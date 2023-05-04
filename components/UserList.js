@@ -15,20 +15,21 @@ const StyledButton = styled.button`
   margin-top: 5px;
 `;
 
-export default function UserList({ onHandleDeleteProject }) {
-  const { data, isLoading } = useSWR("/api/projects");
-  console.log("is there anything", data);
+const List = styled.ul`
+  list-style-type: none;
+`;
+
+export default function UserList({ onHandleDeleteProject, image }) {
+  const { data, isLoading } = useSWR("/api/projects/user-projects");
 
   if (isLoading) {
     return <h2>Is Loading..</h2>;
   }
-  const list = data.filter(
-    (project) => project.createdBy === "dule.rajca@gmail.com"
-  );
+
   return (
     <>
-      <ul>
-        {list.map((project) => {
+      <List>
+        {data.map((project) => {
           return (
             <li key={project._id}>
               <Card
@@ -52,7 +53,7 @@ export default function UserList({ onHandleDeleteProject }) {
             </li>
           );
         })}
-      </ul>
+      </List>
     </>
   );
 }

@@ -6,18 +6,17 @@ const StyledLayout = styled.div`
   display: flex;
   flex-direction: column;
   background-color: rgb(247, 225, 174);
-`;
-
-const Main = styled.main`
-  display: grid;
-  gap: 0.5rem;
-  margin-top: 1rem;
-  padding: 0.5rem;
-  position: relative;
   width: 100%;
 `;
 
-export default function Layout({ children, search, setSearch }) {
+const Main = styled.main`
+  gap: 0.5rem;
+  padding: 0.5rem;
+  /* position: relative; */
+  width: 100%;
+`;
+
+export default function Layout({ children }) {
   return (
     <StyledLayout>
       <Head>

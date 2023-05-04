@@ -1,11 +1,21 @@
 import styled from "styled-components";
-import { useState } from "react";
+
 import useSWR from "swr";
 import Image from "next/image";
 import ProjComments from "./ProjComments";
 
 const CommentForm = styled.form`
   margin-top: 5px;
+`;
+
+const Input = styled.input`
+  height: 30px;
+  border-radius: 12px;
+  border: none;
+`;
+
+const PostButton = styled.button`
+  margin-left: 10px;
 `;
 
 export default function Comments({ projectId }) {
@@ -28,7 +38,6 @@ export default function Comments({ projectId }) {
     if (response.ok) {
       comments.mutate();
       event.target.reset();
-      console.log("We got HERE!!!", response);
     } else {
       console.error(`Error: ${response.status}`);
     }
@@ -42,16 +51,23 @@ export default function Comments({ projectId }) {
       <ProjComments projectId={projectId} comments={data} />
       <CommentForm onSubmit={addComment}>
         {/* <Image
-          src={profile.image}
+          src={image}
           alt=""
           width={20}
           height={20}
           style={{ borderRadius: "50px" }}
         /> */}
 
-        <label htmlFor="text" placeholder="comment"></label>
-        <input name="text" id="text" type="text" placeholder="Comment here" />
-        <button type="submit">Post</button>
+        <label>
+          <Input
+            name="text"
+            id="text"
+            type="text"
+            placeholder="Add your comment.."
+          />
+        </label>
+
+        <PostButton type="submit">🏹</PostButton>
       </CommentForm>
     </>
   );

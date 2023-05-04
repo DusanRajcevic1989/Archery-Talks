@@ -6,9 +6,8 @@ import Comments from "./Comments";
 
 const Lists = styled.ul`
   list-style-type: none;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid: wrap;
+  display: flex;
+  flex-direction: column;
   justify-items: center;
   align-items: center;
   grid-column-gap: 10px;

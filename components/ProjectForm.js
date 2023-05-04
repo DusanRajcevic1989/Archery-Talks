@@ -34,6 +34,7 @@ export default function ProjectForm({ onSubmit, formName }) {
   const router = useRouter();
   function handleSubmit(event) {
     event.preventDefault();
+    router.push("/profilePage");
     onSubmit(event);
   }
   return (

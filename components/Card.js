@@ -2,6 +2,11 @@ import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 
+const Description = styled.p`
+  overflow: auto;
+  width: auto;
+`;
+
 const Article = styled.article`
   border: 5px solid black;
   border-radius: 0.8rem;
@@ -46,7 +51,7 @@ export default function Card({ title, image, description, id, blueprints }) {
           />
         </ImageContainer>
       </Figure>
-      <p>Description: {description}</p>
+      <Description>Description: {description}</Description>
       <p>Blueprints: {blueprints}</p>
       {/* <Link href={`projects/${id}`} passHref legacyBehavior>
         <Anchor>

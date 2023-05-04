@@ -2,6 +2,7 @@ import Link from "next/link";
 import ProjectForm from "../../components/ProjectForm";
 import useSWR from "swr";
 import styled from "styled-components";
+import { useSession } from "next-auth/react";
 
 const Create = styled.div`
   display: flex;
@@ -29,6 +30,8 @@ const BackButton = styled.button`
 `;
 
 export default function CreateProjectPage() {
+  const { data: session } = useSession();
+  console.log(session);
   const projects = useSWR("/api/projects");
 
   async function addProject(event) {
@@ -38,7 +41,7 @@ export default function CreateProjectPage() {
     const projectData = Object.fromEntries(formData);
     const response = await fetch("/api/projects", {
       method: "POST",
-      body: JSON.stringify(projectData),
+      body: JSON.stringify({ ...projectData, createdBy: session.user.email }),
       headers: {
         "Content-Type": "application/json",
       },

@@ -5,7 +5,7 @@ import Navigation from "./Navigation";
 const StyledLayout = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: brown;
+  background-color: rgb(247, 225, 174);
 `;
 
 const Main = styled.main`

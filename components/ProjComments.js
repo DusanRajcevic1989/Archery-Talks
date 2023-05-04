@@ -1,10 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
-const StyledComment = styled.div`
-  background-color: rgb(241, 246, 249);
-  border-radius: 5px;
-  box-shadow: 3px 2px;
+const StyledComment = styled.ul`
+  overflow: auto;
+  height: 100px;
+`;
+
+const CommentList = styled.li`
+  background-color: #cfa663;
+  padding: 8px;
+  margin: 3px;
+  border-radius: 12px;
+  overflow: auto;
+  width: auto;
 `;
 
 export default function ProjComments({ projectId, comments }) {
@@ -15,7 +23,7 @@ export default function ProjComments({ projectId, comments }) {
   return (
     <StyledComment>
       {projComments.map((comment) => {
-        return <li key={comment._id}>{comment.text}</li>;
+        return <CommentList key={comment._id}>{comment.text}</CommentList>;
       })}
     </StyledComment>
   );

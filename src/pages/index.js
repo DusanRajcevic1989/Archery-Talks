@@ -3,7 +3,7 @@ import useSWR from "swr";
 import List from "../../components/List";
 import Link from "next/link";
 import Navigation from "../../components/Navigation";
-
+// import { useSession } from "next-auth/react";
 const HomeStyle = styled.div`
   display: flex;
   flex-direction: column;
@@ -38,8 +38,6 @@ const StyledChat = styled.button`
 `;
 
 export default function Home() {
-  // const { data } = useSWR("/api/projects");
-
   return (
     <>
       <HomeStyle>

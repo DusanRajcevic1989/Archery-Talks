@@ -11,15 +11,15 @@ export default function SearchInput() {
     event.preventDefault;
 
     const encodedSearch = encodedURI(search);
-    router.push(`/api/detiledPage?q=${encodedSearch}`);
+    router.push(`/index?q=${encodedSearch}`);
   }
-  return (
-    <form onSubmit={onSearch}>
-      <input
-        value={search}
-        onChange={(event) => setSearch(event.target.value)}
-        placeholder="Search here"
-      />
-    </form>
-  );
+  // return (
+  //   <form onSubmit={onSearch}>
+  //     <input
+  //       value={search}
+  //       onChange={(event) => setSearch(event.target.value)}
+  //       placeholder="Search here"
+  //     />
+  //   </form>
+  // );
 }

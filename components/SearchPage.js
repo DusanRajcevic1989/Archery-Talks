@@ -18,10 +18,7 @@ export default function SearchPage() {
   const searchQuery = search ? search.get("q") : null;
 
   const encodedSearch = encodeURI(searchQuery);
-  const { data, isLoading } = useSWR(
-    `api/detailePage?q=${encodedSearch}`,
-    fetchProjects
-  );
+  const { data, isLoading } = useSWR(`index?q=${encodedSearch}`, fetchProjects);
   console.log("search params", encodedSearch);
 
   return <div>SearchPage</div>;

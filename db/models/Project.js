@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
-import Comment from "./Comment";
+
+import User from "./User";
 const { Schema } = mongoose;
 
 const projectSchema = new Schema({
@@ -7,7 +8,7 @@ const projectSchema = new Schema({
   image: { type: String, required: true },
   blueprints: { type: String, required: true },
   description: { type: String, required: true },
-  // comments: [{ type: Schema.Types.ObjectId, ref: Comment }],
+  createdBy: { type: {}, required: true, ref: User },
 });
 const Project =
   mongoose.models.Project || mongoose.model("Project", projectSchema);

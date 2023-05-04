@@ -3,12 +3,12 @@ import Link from "next/link";
 import styled from "styled-components";
 import { StyledButton } from "./StyledButton";
 import SearchInput from "./SearchInput";
+import { signIn } from "next-auth/react";
 
 const StyledNav = styled.div`
   display: flex;
   flex-wrap: wrap;
   border-radius: 12px;
-
   width: auto;
   height: 50px;
   margin-bottom: 8px;
@@ -24,11 +24,8 @@ export default function Navigation() {
       <SearchInput />
       <Link href=""></Link>
       <Link href="/about">About</Link>
-      <Link href="/login">
-        <StyledButton type="button" passHref legacyBehavior>
-          Log In
-        </StyledButton>
-      </Link>
+      <Link href="/profilePage">My Profile</Link>
+      <StyledButton onClick={() => signIn()}>Sign In</StyledButton>
     </StyledNav>
   );
 }

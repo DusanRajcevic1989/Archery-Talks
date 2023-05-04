@@ -18,7 +18,7 @@ export default function App({ Component, pageProps, session }) {
         },
       }}
     >
-      <SessionProvider>
+      <SessionProvider session={session}>
         <Layout search={search} setSearch={setSearch}>
           <Component {...pageProps} />
         </Layout>

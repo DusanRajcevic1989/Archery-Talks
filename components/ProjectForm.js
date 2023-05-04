@@ -21,7 +21,7 @@ const Input = styled.input`
 
 const Textarea = styled.textarea`
   font-family: inherit;
-
+  overflow: auto;
   border-radius: 0.5rem;
   padding: 0.5rem;
 `;

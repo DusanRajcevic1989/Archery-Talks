@@ -4,9 +4,13 @@ import useSWR from "swr";
 import Image from "next/image";
 import ProjComments from "./ProjComments";
 
+const CommentForm = styled.form`
+  margin-top: 5px;
+`;
+
 export default function Comments({ projectId }) {
-  const { data, isLoading } = useSWR("/api/comments");
-  console.log("prvo ovo", data);
+  const comments = useSWR("/api/comments");
+  const { data, isLoading } = comments;
 
   async function addComment(event) {
     event.preventDefault();
@@ -22,6 +26,7 @@ export default function Comments({ projectId }) {
     });
 
     if (response.ok) {
+      comments.mutate();
       event.target.reset();
       console.log("We got HERE!!!", response);
     } else {
@@ -32,24 +37,10 @@ export default function Comments({ projectId }) {
     return <h2>Is loading...</h2>;
   }
 
-  // await dbConnect();
-  // const [comment, setComment] = useState([]);
-  // const [text, setText] = useState("");
-
-  // async function handleSubmit(event) {
-  //   event.preventDefault();
-
-  //   try {
-  //     const comments = db.collection("comments");
-  //     await comments.insertOne({ text });
-  //     setText("");
-  //     setComment([...comment, { text }]);
-  //   } catch (error) {}
-
   return (
     <>
       <ProjComments projectId={projectId} comments={data} />
-      <form onSubmit={addComment}>
+      <CommentForm onSubmit={addComment}>
         {/* <Image
           src={profile.image}
           alt=""
@@ -59,16 +50,9 @@ export default function Comments({ projectId }) {
         /> */}
 
         <label htmlFor="text" placeholder="comment"></label>
-        <input
-          name="text"
-          id="text"
-          type="text"
-          // value={text}
-          // onChange={(event) => setComment(event.target.value)}
-          placeholder="Comment here"
-        />
+        <input name="text" id="text" type="text" placeholder="Comment here" />
         <button type="submit">Post</button>
-      </form>
+      </CommentForm>
     </>
   );
 }

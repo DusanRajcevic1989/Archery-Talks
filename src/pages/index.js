@@ -45,12 +45,12 @@ export default function Home() {
         <Navigation />
 
         <List />
-        <Buttons>
+        {/* <Buttons>
           <Link href="/create">
             <StyledButton>Add Your Project</StyledButton>
           </Link>
           <StyledChat>Chat</StyledChat>
-        </Buttons>
+        </Buttons> */}
       </HomeStyle>
     </>
   );

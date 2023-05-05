@@ -3,7 +3,6 @@ import Link from "next/link";
 import { useSession, signOut } from "next-auth/react";
 import useSWR from "swr";
 import List from "../../components/List";
-import { StyledButton } from "../../components/StyledButton";
 import styled from "styled-components";
 import UserList from "../../components/UserList";
 
@@ -13,6 +12,17 @@ const HomeStyle = styled.div`
   height: 100%;
   width: 100%;
 `;
+const StyledButton = styled.button`
+  background-color: lightsalmon;
+  padding: 0.4rem;
+  border-radius: 12px;
+  color: black;
+  font-weight: bold;
+  font-size: inherit;
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+`;
 
 const SignOut = styled.button`
   background-color: lightsalmon;
@@ -21,6 +31,20 @@ const SignOut = styled.button`
   color: black;
   font-weight: bold;
   font-size: inherit;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+`;
+const StyledButtonAdd = styled.button`
+  background-color: lightsalmon;
+  padding: 0.4rem;
+  border-radius: 12px;
+  color: black;
+  font-weight: bold;
+  font-size: inherit;
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
 `;
 
 const AvatarImage = styled.img`
@@ -29,6 +53,10 @@ const AvatarImage = styled.img`
 
 const Info = styled.div`
   background-color: bisque;
+  margin-bottom: 8px;
+  position: relative;
+  height: 200px;
+  border-radius: 12px;
 `;
 
 export default function ProfilePage() {
@@ -54,10 +82,10 @@ export default function ProfilePage() {
           <StyledButton>Home</StyledButton>
         </Link>
         <SignOut onClick={() => signOut()}>Sign Out</SignOut>
-        <h1>Welcome {name} </h1>
+        <h2>Welcome {name} </h2>
         <AvatarImage src={image} alt="" />
         <Link href="/create">
-          <StyledButton>Add Your Project</StyledButton>
+          <StyledButtonAdd>Add Your Project</StyledButtonAdd>
         </Link>
       </Info>
 

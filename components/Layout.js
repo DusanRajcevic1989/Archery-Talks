@@ -7,6 +7,8 @@ const StyledLayout = styled.div`
   flex-direction: column;
   background-color: rgb(247, 225, 174);
   width: 100%;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 `;
 
 const Main = styled.main`

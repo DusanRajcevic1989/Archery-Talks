@@ -4,7 +4,7 @@ import styled from "styled-components";
 const StyledParagraph = styled.div`
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  color: antiquewhite;
+  padding: 5px;
   margin-bottom: 5px;
   color: black;
 `;
@@ -24,6 +24,7 @@ export default function About() {
         <p>
           My passion for the Archery goes way back. It started 15 years ago, and
           it did not deminish over time. Hell, one might say it only grew!
+          <br />
           <br />
           You remember when we were kids, we all used to play with sticks that
           were bended and connected with a piece of twine, add to is another
